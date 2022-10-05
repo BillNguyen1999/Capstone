@@ -39,6 +39,7 @@ October 2nd, 2022 & Bill Nguyen & Added Non-Functional Requirements and Use Case
 October 3rd, 2022 & Syed Bokhari & Added Work Partitioning Tables \\
 October 4th, 2022 & Youssef Dahab & Added Open issues and New Problems \\
 October 5th, 2022 & Youssef Dahab & Completed Project Issues \\
+October 5th, 2022 & Hasan Kibria & Added Constraints and Context Diagram \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -70,13 +71,66 @@ Individuals who may not use the application directly for themselves or are not d
 Team 13 members building the REVITALIZE application along with Dr.Spencer Smith and the 4G06 TAs.
 
 \section{Project Constraints}
+\subsection{Mandated Constraints}
+\subsubsection{MC 1}
+\begin{itemize}
+\item Description: Total project monetary constraints must not exceed \$750\\
+\item Rationale: The project must be financially feasible as a no-profit, student-created piece of work
+\end{itemize}
 
-\section{Context Diagrams}
+\subsubsection{MC 2}
+\begin{itemize}
+\item Description:The entire project and its ordered subtasks must be completed as per the deadlines defined by one of the facilitating stakeholders (Dr. Smith)
+\item Rationale:This project is also graded as part of a university course and hence must adhere to strict deadlines
+\end{itemize}
+
+\subsection{Naming Conventions and Terminology}
+\label{sub:Naming Conventions and Terminology}
+\begin{table}[H]
+\caption{Terms and Definitions}
+\centering
+\begin{tabular}{|c|p{10cm}|}
+\hline
+\textbf{Term} & \textbf{Definition}\\
+\hline
+Main Calender Menu & Main page of application after login page, here one can navigate their way  to other menus.\\
+\hline
+Diet Menu & Menu page with functionality naturally inherent to diet-related data\\
+\hline
+Workout Menu & Menu page with functionality naturally inherent to exercise-related data\\
+\hline
+Rest Menu &Menu page with functionality naturally inherent to sleep-related data\\
+\hline
+\end{tabular}
+\end{table}
+
+
+\subsection{Relevant Facts and Assumptions}
+\subsubsection{Facts}
+\begin{itemize}
+\item The average daily caloris intake for an adult is 2000 calories
+\item The average amount of daily sleep required by an adult is 6-8 hours
+\end{itemize}
+
+\subsubsection{Assumptions}
+\begin{itemize}
+\item User is familiar with basic additive and multiplicative mathematics
+\item User knows how to operate a smart mobile phone
+\item User can read english at a limited working proficiency
+\end{itemize}
+	
+\section{Context Diagram}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{cont_diag.png}
+    \caption{\textcolor{black}Context diagram for Revitalize}
+\end{figure}
+
 
 \section{Functional Decomposition Diagrams}
 
 \subsubsection{Work Partitioning}
-\begin{table}[h!]
+\begin{table}[H]
 \caption{Work Partitioning Events}
 \centering
 \begin{tabular}{|c|p{3.5cm}|c|p{3.5cm}|}
@@ -348,8 +402,12 @@ Possible ideas to make REVITALIZE accessible to all people include designing cle
 
 \noindent Bill Nguyen: Skills that need to acquire are end to end development, CI/CD, multiple ways of testing (integration, unit, acceptance tests etc...). Will be needed since project is end to end (front-end, back-end, database etc.), will be using CI/CD to deploy code changes, and will be testing project in multiple ways.
 
+\noindent Hasan Kibria: Skills that need to acquire are development with mobile app frameworks and deployment of a mobile application.
+
 \subsection{How Knowledge and Skills Will Be Acquired}
 \noindent Bill Nguyen: Project will be end to end so will implement code in front-end, back-end etc. and will be integrating all components to make it an end to end project. Will use CI/CD in project to integrate and deploy code, so will add necessary steps in yaml file to make and update CI/CD process. Will research and implement unit, integration, acceptance tests etc. to learn more about multiple types of tests.
+
+\noindent Hasan Kibria: Developing/ deploying the codebase that uses a development mobile app framework and using Stack Overflow/ other online resources for ongoing guidance with regards to development as well as deploying
 
 \newpage 
 
