@@ -23,30 +23,52 @@ const DietScreen=({navigation})=>{
     function mybuttonclick() {
       Alert.alert('hi')
   }
+  itemSeparator = () => {
+    return <View style={globalStyles.separator}></View>
+
+};
   
     
     return (
         <View style={globalStyles.container}>
+            <View style={globalStyles.date_container}>
+            <TouchableOpacity >
+                <Ionicons.Button style={globalStyles.topLeftContainer} onPress={()=> subtractDate()} name= 'arrow-back-outline' />
+            </TouchableOpacity>
             <TouchableOpacity style={globalStyles.topCenterContainer}>
                 <Text style={globalStyles.appButtonText}>{ dateString }</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={globalStyles.topLeftContainer}>
-                <Ionicons.Button onPress={()=> subtractDate()} name= 'arrow-back-outline' />
+            <TouchableOpacity >
+                <Ionicons.Button style={globalStyles.topRightContainer} onPress={()=> addDate()} name= 'arrow-forward-outline' />
             </TouchableOpacity>
-            <TouchableOpacity style={globalStyles.topRightContainer}>
-                <Ionicons.Button onPress={()=> addDate()} name= 'arrow-forward-outline' />
-            </TouchableOpacity>
-            <FlatList style={globalStyles.listContainer}
+            </View>
+            <Text style={globalStyles.listTitle}>Food Log</Text>
+            <View style={globalStyles.listContainer}>
+            <FlatList 
         data={[
           {key: 'Pineapple Pizzzaa'},
           {key: 'Chocolate Doughnut'},
           {key: 'Vanilla Milkshake'},
           {key: 'Cocounut Milkshake'}
         ]}
+        ItemSeparatorComponent = {itemSeparator}
         renderItem={({item}) => <View style={globalStyles.listButtonContainer}>
-          <Text style={globalStyles.item}>{item.key}</Text><Button onPress={mybuttonclick} title="edit"/><Button onPress={mybuttonclick} title="delete"/>
+            <View style={globalStyles.listRowContainer}>
+                <View style={globalStyles.item_Name}>
+                <Text style={globalStyles.item}>{item.key}</Text>
+                </View>
+          <View style={globalStyles.buttonsContainer}>
+          <TouchableOpacity style={globalStyles.list_button}onPress={mybuttonclick}>
+            <Text style={globalStyles.list_button_text}>Edit</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={globalStyles.list_button}onPress={mybuttonclick}>
+            <Text style={globalStyles.list_button_text}>Delete</Text>
+            </TouchableOpacity>
+          </View>
+          </View>
           </View>}
       />
+      </View>
       <TouchableOpacity onPress={()=>navigation.navigate('Add Food Screen')} style={globalStyles.appButtonContainer}>
                 <Text style={globalStyles.appButtonText}>{"Add Item +"}</Text>
             </TouchableOpacity>
@@ -58,8 +80,13 @@ const DietScreen=({navigation})=>{
           {key: 'Fats', key1:'500'},
           {key: 'Carbs', key1:'500'}
         ]}
-        renderItem={({item}) => <View style={globalStyles.listButtonContainer}>
-          <Text style={globalStyles.item}>{item.key}</Text><Text style={globalStyles.item}>{item.key1}</Text>
+        renderItem={({item}) => <View style={globalStyles.listRowContainer}>
+                <View style={globalStyles.item_Name}>
+                <Text style={globalStyles.item}>{item.key}</Text>
+                </View>
+                <View style={globalStyles.item_Info}>
+                <Text style={globalStyles.item}>{item.key1}</Text>
+                </View>
           </View>}
       />
         </View>
