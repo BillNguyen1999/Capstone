@@ -1,6 +1,5 @@
 const axios = require("axios");
 const RECIPE_API = 'https://api.edamam.com/api/recipes/v2?type=public&random=true&app_id=2c93d30b&app_key=a82873062815465cd567e4189e4ae30d';
-
 const FilterRecipe = async (req, res) => { 
   // /recipefilter?keyWord=pasta&health=pork-free;red-meat-free&diets=low-sodium;low-fat&calories=500-1000&fat=40&carbs=190-500&protein=50
   keyWord = '&q=' + req.query.keyWord;
