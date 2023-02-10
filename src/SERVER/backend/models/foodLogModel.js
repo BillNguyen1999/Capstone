@@ -20,5 +20,3 @@ const foodLogSchema = mongoose.Schema({
 })
 
 module.exports = mongoose.model("FoodLog", foodLogSchema);
-
-// now do recipe filter one, and try to make and api call td

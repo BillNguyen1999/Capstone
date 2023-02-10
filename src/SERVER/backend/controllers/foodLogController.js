@@ -46,12 +46,9 @@ const addMeal = async (req, res) => {
   } catch (error) {
     res.status(400).json({ success: false, message: error.message });
   }
-  //create sleep in DB
 
 };
 
-//gets sleep data based on email and date
-//only gets the first one
 const getFoodLog = async (req, res) => { 
   const { email: email, foodDate: foodDate } = req.params
   let lowerCaseEmail = email.toLowerCase();
@@ -90,7 +87,6 @@ const getFoodLog = async (req, res) => {
   }
 }
 
-// //update and edit selected sleep data based on email and date
 const updateMeal = async (req, res) => {
   const { email: email, foodDate: foodDate } = req.params
   let lowerCaseEmail = email.toLowerCase();
@@ -119,7 +115,6 @@ const updateMeal = async (req, res) => {
   }
 }
 
-// //deletes selected sleep data based on email and date
 const deleteMeal = async (req, res) => {
   const { email: email, foodDate: foodDate } = req.params
   let lowerCaseEmail = email.toLowerCase();
@@ -139,5 +134,4 @@ const deleteMeal = async (req, res) => {
     res.status(404).json({ message: error.message });
   }
 }
-// module.exports = { addSleepData, getSleepData, getAllUserSleepData, updateSleepData, deleteSleepData };
 module.exports = { addMeal, getFoodLog, updateMeal, deleteMeal };
